@@ -17,7 +17,7 @@ public class Singleton {
         
     }
     
-    private static Singleton getinstance()
+    public static Singleton getinstance()
     {
         if(instance == null)
         {
