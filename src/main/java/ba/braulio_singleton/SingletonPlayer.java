@@ -12,9 +12,11 @@ package ba.braulio_singleton;
 public class SingletonPlayer {
     private static SingletonPlayer instance;
     private StatePlayerMode psm;
+    private ISwingWeapon sw;
     private SingletonPlayer()
     {
         psm = new AboveLandState();
+        sw = new HyperSwing();
     }
     
     public static SingletonPlayer getinstance()
@@ -40,4 +42,29 @@ public class SingletonPlayer {
     {
         return psm.isCorrectDecision(b);
     }
+    
+    public void swing()
+    {
+        sw.specialSwing();
+    }
+    
+    
+
+    public StatePlayerMode getPsm() {
+        return psm;
+    }
+
+    public void setPsm(StatePlayerMode psm) {
+        this.psm = psm;
+    }
+
+    public ISwingWeapon getSw() {
+        return sw;
+    }
+
+    public void setSw(ISwingWeapon sw) {
+        this.sw = sw;
+    }
+    
+    
 }

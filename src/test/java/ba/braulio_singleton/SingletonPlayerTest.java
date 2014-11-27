@@ -46,4 +46,22 @@ public class SingletonPlayerTest {
         assertTrue(expected);
     }
     
+    @Test
+    public void testGetSetPMS()
+    {
+        single = SingletonPlayer.getinstance();
+        StatePlayerMode spm = new AboveLandState();
+        single.setPsm(spm);
+        assertSame(spm, single.getPsm());
+    }
+    
+    @Test
+    public void testGetSetSW()
+    {
+        single = SingletonPlayer.getinstance();
+        ISwingWeapon spm = new UltraHyperSwing();
+        single.setSw(spm);
+        assertSame(spm, single.getSw());
+    }
+    
 }
